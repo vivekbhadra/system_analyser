@@ -1,6 +1,5 @@
 #include <iostream>
 #include <memory>
-#include <string>
 #include "SystemAnalyser.h"
 
 int main()
