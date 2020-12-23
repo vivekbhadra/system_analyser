@@ -6,7 +6,7 @@ SystemAnalyser::SystemAnalyser()
 {
 }
 
-std::string SystemAnalyser::RunCommand(const char * command)
+void SystemAnalyser::RunCommand(const char * command)
 {
 	std::array<char, 128> buffer;
 	std::string result;
@@ -19,15 +19,17 @@ std::string SystemAnalyser::RunCommand(const char * command)
 		result += buffer.data();
 	}
 
-	return result;
+	StoreOutput(result);
 }
 
-void SystemAnalyser::StoreOutput(std::string& result)
+void SystemAnalyser::StoreOutput(std::string result)
 {
+	outputStore = result;
 }
 
 void SystemAnalyser::DisplayOutput()
 {
+	std::cout << outputStore << std::endl;
 }
 
 SystemAnalyser::~SystemAnalyser()

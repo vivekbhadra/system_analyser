@@ -5,9 +5,11 @@ class SystemAnalyser
 {
 	public: 
 		SystemAnalyser();
-		virtual std::string RunCommand(const char * command);
-		virtual void StoreOutput(std::string& result);
+		virtual void RunCommand(const char * command);
 		virtual void DisplayOutput();
 		virtual ~SystemAnalyser();
+	private:
+		std::string outputStore;
+		void StoreOutput(std::string result);
 };
 #endif
